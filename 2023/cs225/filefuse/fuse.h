@@ -3,11 +3,21 @@
 
 #include <stddef.h> /* size_t definition */
 
-enum 
-{E_BAD_SOURCE=1, E_BAD_DESTINATION, E_NO_MEMORY };
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-int unfuse( char const * filename );
-int fuse( char const ** filenames, int num_files, char const * output);
+  enum
+  {
+    E_BAD_SOURCE = 1, E_BAD_DESTINATION, E_NO_MEMORY
+  };
+
+  int unfuse(char const* filename);
+  int fuse(char const** filenames, int num_files, char const* output);
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif 
 
