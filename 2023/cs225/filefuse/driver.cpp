@@ -2,10 +2,7 @@
 #include <fstream>  /* ifstream */
 #include <cstdlib> /* free/malloc */
 #include <vector> /* vector */
-extern "C" {
-  #include "fuse.h"
-}
-
+#include "fuse.h"
 
 #define BUFFER_SIZE 1<<16 /* 65K */
 
