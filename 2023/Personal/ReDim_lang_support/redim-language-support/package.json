@@ -1,0 +1,30 @@
+{
+  "name": "redim-language-support",
+  "displayName": "ReDim Language Support",
+  "description": "Syntax Highlighting for ReDim",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "red",
+      "aliases": ["ReDim", "red"],
+      "extensions": [".red"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "red",
+      "scopeName": "source.redim-language-support",
+      "path": "./syntaxes/red.tmLanguage.json"
+    }]
+  },
+  "configurationDefaults":{
+    "red":{
+      "editor.semanticHighlighting.enabled": true
+    }
+  }
+}

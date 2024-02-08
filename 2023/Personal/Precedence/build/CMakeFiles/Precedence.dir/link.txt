@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/Precedence.dir/main.cpp.o CMakeFiles/Precedence.dir/evaluation.cpp.o CMakeFiles/Precedence.dir/Number.cpp.o  -o ../bin/Precedence 

@@ -1,0 +1,1 @@
+add_executable(Precedence main.cpp evaluation.cpp Number.cpp)

@@ -272,11 +272,24 @@ class ObjectAllocator
     OAStats stats_;
     unsigned block_size;
     unsigned page_count;
+    unsigned header_block_offset;
 
     void AllocNewPage();
     bool InFreeList(void* block) const;
     
     bool InPage(const GenericObject* page, void* block) const;
+    bool IsAlligned(char* addr) const;
+
+    void WriteHeader(char* header, MemBlockInfo* external = nullptr);
+    void ClearHeader(char* header);
+
+    bool CheckCorrupt(char* object) const;
 };
+
+struct basic_header {
+  unsigned obj_num;
+  char in_use;
+};
+
 
 #endif

@@ -1,0 +1,6 @@
+==8408== 144 (24 direct, 120 indirect) bytes in 1 blocks are definitely lost in loss record 6 of 6
+==8408==    at 0x483BE63: operator new(unsigned long) (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==8408==    by 0x10CB25: RangeList::insert_value(int, int) (rangelist.cpp:285)
+==8408==    by 0x10A78B: test7() (driver.cpp:390)
+==8408==    by 0x10C149: main (driver.cpp:1029)
+==8408== 

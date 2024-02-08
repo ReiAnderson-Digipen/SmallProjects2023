@@ -1,0 +1,32 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Add File",
+      "type": "shell",
+      "command": "touch ${workspaceFolder}/src/${input:filename};sed -i 's/)/ ${input:filename})/g' ${workspaceFolder}/src/CMakeLists.txt;cmake ${workspaceFolder}/CMakeLists.txt",
+      "problemMatcher": []
+    },
+    {
+      "label": "Remove File",
+      "type": "shell",
+      "command": "sed -i 's/ ${input:filename}//g' ${workspaceFolder}/src/CMakeLists.txt;rm ${workspaceFolder}/src/${input:filename};cmake ${workspaceFolder}/CMakeLists.txt;",
+      "problemMatcher": []
+    },
+    {
+      "label": "build debug",
+      "type": "shell",
+      "command": "cmake --build ${workspaceFolder}/build",
+      "problemMatcher": []
+    },
+  ],
+  "inputs": [
+    {
+      "id": "filename",
+      "description": "Filename input:",
+      "type":"promptString"
+    }
+  ]
+}

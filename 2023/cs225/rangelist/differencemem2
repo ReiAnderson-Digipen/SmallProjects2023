@@ -1,0 +1,738 @@
+==13315== Invalid write of size 8
+==13315==    at 0x10BA17: Merge (rangelist.c:119)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b4b0 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B991: Merge (rangelist.c:97)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB91: insert_value (rangelist.c:175)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10BA2B: Merge (rangelist.c:121)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b4b0 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B991: Merge (rangelist.c:97)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB91: insert_value (rangelist.c:175)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10BB76: insert_value (rangelist.c:173)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b440 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B88E: PositionInNode (rangelist.c:67)
+==13315==    by 0x10BCE2: insert_value (rangelist.c:222)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b440 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B89C: PositionInNode (rangelist.c:67)
+==13315==    by 0x10BCE2: insert_value (rangelist.c:222)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b444 is 4 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10BCF7: insert_value (rangelist.c:227)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b450 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid write of size 8
+==13315==    at 0x10BD27: insert_value (rangelist.c:231)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b450 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B970: Merge (rangelist.c:94)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b448 is 8 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10B97B: Merge (rangelist.c:96)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b450 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid free() / delete / delete[] / realloc()
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B991: Merge (rangelist.c:97)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b440 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid write of size 8
+==13315==    at 0x10BA17: Merge (rangelist.c:119)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b450 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10BA2B: Merge (rangelist.c:121)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b450 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10995A: test2 (driver.c:180)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB49: insert_value (rangelist.c:168)
+==13315==    by 0x109938: test2 (driver.c:178)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10BB76: insert_value (rangelist.c:173)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B9AC: Merge (rangelist.c:102)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B9B2: Merge (rangelist.c:102)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b504 is 4 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B9FA: Merge (rangelist.c:115)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b508 is 8 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10BA0F: Merge (rangelist.c:119)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b510 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid write of size 8
+==13315==    at 0x10BA17: Merge (rangelist.c:119)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b570 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B991: Merge (rangelist.c:97)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB91: insert_value (rangelist.c:175)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid free() / delete / delete[] / realloc()
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10BA2B: Merge (rangelist.c:121)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b570 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B991: Merge (rangelist.c:97)
+==13315==    by 0x10BBBB: insert_value (rangelist.c:178)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB91: insert_value (rangelist.c:175)
+==13315==    by 0x10999E: test2 (driver.c:184)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C254: print_raw (rangelist.c:375)
+==13315==    by 0x1099AA: test2 (driver.c:185)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b504 is 4 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C25B: print_raw (rangelist.c:375)
+==13315==    by 0x1099AA: test2 (driver.c:185)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C261: print_raw (rangelist.c:375)
+==13315==    by 0x1099AA: test2 (driver.c:185)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b508 is 8 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10C27B: print_raw (rangelist.c:376)
+==13315==    by 0x1099AA: test2 (driver.c:185)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b510 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C0F2: printf_elements (rangelist.c:350)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C0FD: printf_elements (rangelist.c:351)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b508 is 8 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C10F: printf_elements (rangelist.c:352)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C138: printf_elements (rangelist.c:352)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b504 is 4 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C11A: printf_elements (rangelist.c:352)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b508 is 8 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10C144: printf_elements (rangelist.c:353)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b504 is 4 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10C14E: printf_elements (rangelist.c:354)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b510 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10C177: printf_elements (rangelist.c:355)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b510 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10C1B6: printf_elements (rangelist.c:356)
+==13315==    by 0x1099D1: test2 (driver.c:187)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b510 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B7B6: get (rangelist.c:33)
+==13315==    by 0x10929A: print_using_get (driver.c:42)
+==13315==    by 0x1099F3: test2 (driver.c:190)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B8C9: IsBetweenNodes (rangelist.c:72)
+==13315==    by 0x10B7E7: get (rangelist.c:37)
+==13315==    by 0x10929A: print_using_get (driver.c:42)
+==13315==    by 0x1099F3: test2 (driver.c:190)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b504 is 4 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10B7FF: get (rangelist.c:42)
+==13315==    by 0x10929A: print_using_get (driver.c:42)
+==13315==    by 0x1099F3: test2 (driver.c:190)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b510 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B7C1: get (rangelist.c:33)
+==13315==    by 0x10929A: print_using_get (driver.c:42)
+==13315==    by 0x1099F3: test2 (driver.c:190)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b504 is 4 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B7CD: get (rangelist.c:35)
+==13315==    by 0x10929A: print_using_get (driver.c:42)
+==13315==    by 0x1099F3: test2 (driver.c:190)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b508 is 8 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 4
+==13315==    at 0x10B8D5: IsBetweenNodes (rangelist.c:72)
+==13315==    by 0x10B7E7: get (rangelist.c:37)
+==13315==    by 0x10929A: print_using_get (driver.c:42)
+==13315==    by 0x1099F3: test2 (driver.c:190)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid read of size 8
+==13315==    at 0x10B766: delete (rangelist.c:19)
+==13315==    by 0x109A09: test2 (driver.c:194)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b510 is 16 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== Invalid free() / delete / delete[] / realloc()
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B779: delete (rangelist.c:21)
+==13315==    by 0x109A09: test2 (driver.c:194)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Address 0x4a5b500 is 0 bytes inside a block of size 24 free'd
+==13315==    at 0x483CA3F: free (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10BA26: Merge (rangelist.c:120)
+==13315==    by 0x10BD36: insert_value (rangelist.c:232)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315==  Block was alloc'd at
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BD1A: insert_value (rangelist.c:230)
+==13315==    by 0x10997C: test2 (driver.c:182)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== 24 bytes in 1 blocks are definitely lost in loss record 4 of 5
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BDDB: insert_value (rangelist.c:247)
+==13315==    by 0x109758: test2 (driver.c:144)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 
+==13315== 96 (24 direct, 72 indirect) bytes in 1 blocks are definitely lost in loss record 5 of 5
+==13315==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==13315==    by 0x10B90D: CreateNode (rangelist.c:77)
+==13315==    by 0x10BB91: insert_value (rangelist.c:175)
+==13315==    by 0x10976E: test2 (driver.c:145)
+==13315==    by 0x10B72C: main (driver.c:786)
+==13315== 

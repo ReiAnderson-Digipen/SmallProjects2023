@@ -1,7 +1,7 @@
 PRG=gcc0.exe
 
 GCC=g++
-GCCFLAGS=-Wall -Wextra -ansi -pedantic -Wunused
+GCCFLAGS=-Wall -Wextra -ansi -pedantic -Wunused -g
 DRIVER0=driver.cpp
 DRIVER1=driver.c
 

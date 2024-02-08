@@ -1,0 +1,5 @@
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/CMakeFiles/edit_cache.dir
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/build/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/build/CMakeFiles/Precedence.dir

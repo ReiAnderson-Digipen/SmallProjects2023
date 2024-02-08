@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/driver.cpp
+mydeque.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/mydeque.h
+iostream
+-
+cstdlib
+-
+random
+-
+deque
+-
+cstdio
+-
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/mydeque.cpp
+mydeque.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/mydeque.h
+iostream
+-
+iomanip
+-
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/mydeque.h
+fstream
+-
+

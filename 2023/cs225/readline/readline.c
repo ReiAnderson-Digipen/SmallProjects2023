@@ -1,65 +1,68 @@
-#include <stdlib.h> /* malloc/calloc, free */
-#include <string.h> /* strlen */
-#include "readline.h"
+/**************************
+     Author: andrew kitzan (andrew.kitzan@digipen.edu)
+last edited: 8/30/23
+       desc: reads the first line of the passed in file.
+**************************/
+
+/* libraries */
+
+#include <stdio.h>  /* Null, file, feof, fgets */
+#include <stdlib.h> /* calloc, realloc         */
+#include <string.h> /* strlen, strcpy          */
+
+#define TRUE 1
 
 
-struct buffer {
-  unsigned size, capacity;
-  char* data;
-}; 
 
-/*
-resize_buf, takes a buffer, allocates a new buffer double the size of
-its capacity, copies data from buffer
-to the new buffer, frees the old buffer, and sets the buffer data pointer to the new buffer data
-*/
-static void resize_buf(struct buffer* buffer)
+char * readline( FILE * stream )
 {
-  
-  char* currentDat = buffer->data;
-  if (currentDat != NULL)
-  {
-    buffer->data = (char*)calloc(buffer->capacity * 2, sizeof(char));
-    for (unsigned i = 0; i < buffer->capacity; i++)
+    /* set up varables */
+    char * str;
+    char * tempStr;
+    int capacity = 2;
+    int size = 0;
+
+
+    /* check if file was opened */
+    if ( !stream )
     {
-      buffer->data[i] = currentDat[i];
+        return NULL;
     }
-    buffer->capacity = buffer->capacity * 2;
-    free(currentDat);
-  }
-  
-}
 
+    /* allocate the string for the first time */
+    str = (char *)calloc( capacity, sizeof(char) );
 
-static struct buffer buffer_create()
-{
-  struct buffer b = { 0, 2, (char*)calloc(2, sizeof(char)) };
-  return b;
-}
-
-char* readline(FILE* f)
-{
-  struct buffer linebuf = buffer_create();
-  while (1)
-  {
-    char* unused = fgets(linebuf.data + linebuf.size, linebuf.capacity - linebuf.size, f);
-    (void)unused;
-    resize_buf(&linebuf);
-    linebuf.size = strlen(linebuf.data);
-    if (*(linebuf.data + linebuf.size - 1) == '\n')
+    while ( TRUE )
     {
-      *(linebuf.data + linebuf.size - 1) = 0;
-      break;
-    }
+        /* collect the string from the stream up to capacity-1 char */
+        fgets( str + size, capacity - size, stream );
+
+        if ( str == NULL )
+        {
+            break;
+        }
+
+        size = strlen(str);
+
+        /* if at end of file or line then stop looping */
+        if( str[size - 1] == '\n' || feof(stream) || str[size - 1] == '\0')
+        {
+            break;
+        }
         
-    if (feof(f))
-    {
-      break;
+        /* realloc old string*/
+        capacity *= 2;
+        tempStr = (char *)calloc( capacity, sizeof(char) );
+        strcpy( tempStr, str );
+        free( str );
+        str = tempStr;
     }
 
-  }
-  return linebuf.data;
+    /* if new line charecter was found then replace with */
+    if( str[size - 1] == '\n' )
+    {
+        str[size - 1] = '\0';
+    }
+
+    return str;
 }
-
-
-

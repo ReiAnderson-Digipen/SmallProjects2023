@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/helpers.c
+helpers.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/helpers.h
+string.h
+-
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/helpers.h
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/main.c
+stdio.h
+-
+operator.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/operator.h
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/operator.c
+operator.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/operator.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+helpers.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/helpers.h
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/operator.h
+

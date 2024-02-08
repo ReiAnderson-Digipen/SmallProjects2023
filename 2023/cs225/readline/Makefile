@@ -1,7 +1,7 @@
 PRG=gcc0.exe
 
 GCC=gcc
-GCCFLAGS=-O2 -Wall -Wextra -g
+GCCFLAGS=-O0 -Wall -Wextra -g
 
 VALGRIND_OPTIONS=-q --leak-check=full
 DIFFLAGS=--strip-trailing-cr -y --suppress-common-lines

@@ -1,0 +1,102 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ReDim",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#identifiers"
+		},
+		{
+			"include": "#operators"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+				"name": "keyword.control.red",
+				"match": "\\b(if|while|for|return|else)\\b"
+				},
+				{
+				"name": "keyword.control.range.red",
+				"match": "\\b(in|to)\\b"
+				},
+				{
+				"name":"entity.name.function",
+				"match": "\\bfn\\b"
+				
+				},
+				{
+					"name":"keyword.operator.let.red",
+					"match": "\\blet\\b"
+				}
+			]
+		},
+		"operators":{
+			"patterns": [
+				{
+					"name":"keyword.operator.arithmatic.red",
+					"match": "[*/+-\\\\%]"
+				},
+				{
+					"name":"keyword.operator.assignment.red",
+					"match": "="
+				},
+				{
+					"name":"keyword.operator.dyn_index.red",
+					"match": "[\\[\\]]"
+				},
+				{
+					"name":"keyword.operator.static_index.red",
+					"match": "\\."	
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.red",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.red",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers":{
+			"patterns": [
+				{
+					"name": "constant.numeric.floating.red",
+					"match": "\\b\\d+\\.\\d+\\b"
+				},
+				{
+					"name": "constant.numeric.integer.red",
+					"match": "\\b\\d+\\b"
+				}				
+			]
+		},
+		"identifiers":{
+			"patterns": [
+				{
+					"name": "variable.other",
+					"match": "[A-Za-z_][A-Za-z0-9_]+"
+				},
+				{
+					"name":"variable.other",
+					"match": "\\.[A-Za-z_][A-Za-z0-9_]+"
+				}
+
+			]
+		}
+
+	},
+	"scopeName": "source.redim-language-support"
+}

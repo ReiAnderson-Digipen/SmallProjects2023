@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/build",
+  "command": "/usr/bin/clang++    -g   -o CMakeFiles/mydeque.dir/driver.cpp.o -c /mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/driver.cpp",
+  "file": "/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/driver.cpp"
+},
+{
+  "directory": "/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/build",
+  "command": "/usr/bin/clang++    -g   -o CMakeFiles/mydeque.dir/mydeque.cpp.o -c /mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/mydeque.cpp",
+  "file": "/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/cs225/deque/mydeque.cpp"
+}
+]

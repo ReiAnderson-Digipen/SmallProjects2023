@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/IValue.h
+vector
+-
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/Number.h
+IValue.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/IValue.h
+ostream
+-
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/evaluation.cpp
+evaluation.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/evaluation.h
+vector
+-
+sstream
+-
+queue
+-
+iostream
+-
+deque
+-
+stack
+-
+Number.h
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/Number.h
+
+/mnt/c/Users/evana/Desktop/GitRepos/DigipenGit/2023/Precedence/src/evaluation.h
+string
+-
+ostream
+-
+

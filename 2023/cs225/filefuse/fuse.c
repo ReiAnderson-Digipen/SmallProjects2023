@@ -1,142 +1,147 @@
 #include "fuse.h"
-#include <stdio.h>    /* fopen/fclose/fread/fwrite */
-#include <stdlib.h>   /* malloc/free */
+#include <stdio.h>    /* fopen/fclose/fread/fwrite/fseek/ftell */
+#include <stdlib.h>   /* malloc/free/exit */
 #include <string.h>   /* strlen */
 
 #define xDEBUG
-#define chunk_size 256 /* for max filename size and chunk grab size on file */
+
+static void find_file_data( FILE * opened_file, long unsigned int *file_size, char *data_buffer );
+
 int fuse( char const ** filenames, int num_files, char const * output)
-{
- 
-  int i = 0;                        /* filenname index */
-  const char nulchar = 0;           /* placeholder to write null character */
-  FILE* out = fopen(output, "wb");  /* Output file */
-  if (!out) /* Test if output file opened successfully */
+{  
+  int BUFFER_SIZE = 1<<16; /* 65 Kb */
+  
+  /* char * file_name_buffer[256]; //might need */
+  FILE *opened_file;
+  long unsigned int file_size = 0;
+  char *data_buffer;
+  FILE *result;
+  int i;
+
+  data_buffer = (char *)malloc( BUFFER_SIZE * sizeof(char) );
+
+
+  result = fopen( output, "wb" );
+  if(result == NULL)
   {
     return E_BAD_DESTINATION;
   }
 
-  /* run through all the files */
-  for (i = 0; i < num_files; i++)
+
+  /* loop thro each file and open it and grab its name, size and data while writing it
+  to a new file */
+  for ( i = 0; i < num_files; ++i )
   {
-    FILE* file = fopen(filenames[i], "rb"); /* current file at index i     */
-    size_t nameLen = strlen(filenames[i]);  /* length of the filename      */
-    size_t fileSize;                        /* sizeof the file             */
-    size_t read_left;                       /* how many bytes left to read */
 
-    /* Check if the file opened successfully */
-    if (!file)
+    /* read file name into file name buffer thro fget or fread */
+    opened_file = fopen( filenames[i], "rb" ); 
+    if(opened_file == NULL)
     {
-      /* Make sure to close the output file if input doesnt open correctly*/
-      fclose(out);
+      fclose(result);
       return E_BAD_SOURCE;
-      
     }
+    fwrite( filenames[i], sizeof(char), strlen(filenames[i]) + 1, result );
+    find_file_data(opened_file, &file_size, data_buffer);
 
-    /* seek to the end to check filesize */
-    fseek(file, 0, SEEK_END);
-    fileSize = ftell(file);
-    /* reset back to the beginning */
-    fseek(file, 0, SEEK_SET);
-
-    /* write the filename */
-    fwrite(filenames[i], sizeof(char), nameLen, out);
-    /* write the null terminator */ 
-    fwrite(&nulchar, sizeof(char), 1, out);
-    /* write file size */
-    fwrite(&fileSize, sizeof(int), 1, out);
-
-    /* set how many bytes left in file */
-    read_left = fileSize;
-
-    /* while there are still bytes to read, keep reading */
-    while (read_left > 0)
+    /*while ( !feof(opened_file) )
     {
-      
-      char buf[chunk_size];        /* buffer to read data to */
-      int grab = chunk_size;       /* current size to grab */
-      if (read_left < chunk_size)
-      {
-        grab = read_left; /* if the amount of bytes is less than chunk_size, you should only read how many left */
-      }
-      /* read 'grab' amount of bytes from file */
-      fread(buf, sizeof(char), grab, file);
-      /* and write it to the output file */
-      fwrite(buf, sizeof(char), grab, out);
-      /* subtract 'grab' from the amount of bytes left to read */
-      read_left -= grab;
-
-    }
-    fclose(file);
+      file_size = fread(data_buffer, 1, file_size, opened_file);
+      fwrite( data_buffer, 1, (size_t)file_size, result );
+    }*/
     
+
+    fclose(opened_file);
+
+ 
+    fwrite( &file_size, sizeof(int), 1, result );
+
+    fwrite( data_buffer, 1, (size_t)file_size, result );
+    
+    
+
   }
-  fclose(out);
-  return 0;
+    fclose(result);
+    free(data_buffer);
+    return 1;
 }
 
 int unfuse( char const * filename )
 {
-  
-  char new_filename[chunk_size];        /* filenames were told to not be bigger than 256 characters */
-  FILE* infile = fopen(filename, "rb"); /* input fused file */
-  int hitEnd = 0;                       /* flag to break out of loop */
+  int NAME_SIZE = 256;
+  int BUFFER_SIZE = 1<<16; /* 65 Kb */
 
-  /* Check if the file opened right */
-  if (!infile)
+  char *name_buffer;
+  char *data_buffer;
+
+  FILE *opened_file;
+  FILE *new_out_file;
+
+  int file_data_size = 0;
+
+  int i;
+  
+  /*malloc buffer*/
+  name_buffer = (char *)malloc(NAME_SIZE * sizeof(char));
+  data_buffer = (char *)malloc( BUFFER_SIZE * 15);
+
+  /*open source file*/
+  opened_file = fopen( filename, "rb" );
+
+  if(opened_file == NULL)
   {
     return E_BAD_SOURCE;
   }
+
   
-  /*while the file hasnt hit the end */
-  while (!hitEnd)
+  while ( !feof(opened_file) )
   {
-    int i = 0;               /* index in new_filename */
-     
-    int grab = chunk_size;   /* current chunk size to grab from the file */
-    int read_left = 0;       /* how many bytes in subfile left */
-    char buffer[chunk_size]; /* buffer to read into */
-
-    FILE* current_file;      /* file pointer to the created file */
-
-    char c = 1;              /* character to use to search for null terminator */
-
-    /*while c isnt null terminator and we havent hit the end of the file */
-    while (c != '\0' && !hitEnd)
+    for(i = 0; i < NAME_SIZE; ++i)
     {
-      c = fgetc(infile);
-      new_filename[i] = c;
-      i++;
-      hitEnd = feof(infile);
+      fread(name_buffer+i, sizeof(char), 1, opened_file);
+      if(name_buffer[i] == '\0')
+      {
+        break;
+      }
     }
 
-    /* open/create the subfile */
-    current_file = fopen(new_filename, "wb");
-    /* read the subfile-size from the fused file */
-    fread(&read_left, sizeof(int), 1, infile);
+    /*fopen new file with name*/
+    new_out_file = fopen( name_buffer, "wb" );
 
-    /* while we have bytes left to read */
-    while (read_left > 0)
+    if(new_out_file == NULL)
     {
-      /* if the count of bytes is less than chunk size */
-      if (read_left < chunk_size)
-      {
-        grab = read_left; /* simply read how many bytes left */
-      }
-      else
-      {
-        grab = chunk_size; /* otherwise, read chunk size */
-      }
-
-      /* read the data */
-      fread(buffer, sizeof(char), grab, infile);
-      /* write that data to the unfuzed file */
-      fwrite(buffer, sizeof(char), grab, current_file);
-      /* reduce bytes left to read */
-      read_left -= grab;
+      return E_BAD_DESTINATION;
     }
-    fclose(current_file);
-    /* check for end of file */
-    hitEnd = feof(infile);
+
+    printf("%d  1  \n", file_data_size);
+    fflush(stdout);
+
+    /* grab file size */
+    fread( &file_data_size, sizeof(int), 1, opened_file );
+
+    fwrite(data_buffer, sizeof(char), file_data_size, opened_file);
+
+    printf("%d  2  \n", file_data_size);
+    fflush(stdout);
+
   }
-  return 0;
+
+      return 1;
+}
+
+static void find_file_data( FILE * opened_file, long unsigned int *file_size, char *data_buffer )
+{
+  int FSEEK_OFFSET = 0; /* no offset */
+  int BUFFER_SIZE = 1<<16; /* 65 Kb */
+
+    /* gives me file size */
+    fseek(opened_file, FSEEK_OFFSET, SEEK_END);
+
+    *file_size = (int)ftell(opened_file);
+
+
+    /* rewind the string back to the start */
+    rewind( opened_file );
+
+    fread( data_buffer, 1, BUFFER_SIZE, opened_file );
+
 }
