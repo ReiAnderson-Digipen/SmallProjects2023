@@ -140,6 +140,12 @@ void Lariat<T, Size>::insert(int index, const T& val)
 }
 
 template <typename T, int Size>
+void Lariat<T, Size>::push_back(const T& val)
+{
+    tail_.
+}
+
+template <typename T, int Size>
 void Lariat<T, Size>::shift_down(int& index, LNode*& current)
 {
     int shift_count = asize_ - index;

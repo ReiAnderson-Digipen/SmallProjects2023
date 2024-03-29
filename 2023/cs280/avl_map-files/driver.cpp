@@ -11,11 +11,18 @@
 
 void simple_inserts( CS280::AVLmap<int,int> & map, std::vector<int> const& data ) {
     //insert (using index operator) and perform sanity check each time
+    for (auto it = data.begin(); it != data.end(); it++)
+    {
+        std::cout << *(it);
+        if (it + 1 != data.end())
+            std::cout << ',';
+    }
+    std::cout << std::endl;
     for (int const& key : data)
     {
-        std::cout << "Size Before " << map.size() << " " << "Inserting: " << key << std::endl;
+        //std::cout << "Size Before " << map.size() << " " << "Inserting: " << key << std::endl;
         map[key] = key; //value is not important
-        std::cout << map << std::endl;
+        //std::cout << map << std::endl;
         // if you have the method below, uncomment next line
         // if (!map.sanityCheck()) std::cout << "Error\n";
     }
@@ -168,14 +175,21 @@ void simple_finds( CS280::AVLmap<int,int> & map, std::vector<int> const& data ) 
 void simple_deletes( CS280::AVLmap<int,int> & map, std::vector<int> const& data ) {
     //insert all and perform sanity check each time
     for ( int const & key : data ) {
-        CS280::AVLmap<int,int>::iterator it = map.find( key );
-        if ( it == map.end() ) {
+        CS280::AVLmap<int, int>::iterator it = map.find(key);
+        std::cout << "Deleting " << key << std::endl;
+        if (it == map.end())
+        {
             std::cout << "cannot find value " << key << std::endl;
-        } else {
+            
+        }
+        else
+        {
+            
             map.erase( it );
             // if you have the method below, uncomment next line
             // if (!map.sanityCheck()) std::cout << "Error\n";
         }
+        std::cout << map << std::endl;
     }
 
     //    std::cout << "--------------------\n" << map << std::endl;
@@ -186,7 +200,7 @@ void test9() {
     std::cout << "-------- " << __func__ << " --------\n";
     CS280::AVLmap<int,int> map;
     
-    std::vector<int> data( 50 );
+    std::vector<int> data( 12 );
     std::iota( data.begin(), data.end(), 1 );
     std::shuffle( data.begin(), data.end(), std::mt19937{std::random_device{}()} );
 

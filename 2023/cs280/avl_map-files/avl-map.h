@@ -1,6 +1,7 @@
 #ifndef AVLMAP_H
 #define AVLMAP_H
 #include <algorithm>
+#include <queue>
 namespace CS280 {
 
 	template< typename KEY_TYPE, typename VALUE_TYPE >
@@ -526,97 +527,34 @@ namespace CS280 {
 		}
 		void erase(AVLmap_iterator it)
 		{
-			if (it == end_it)
+			std::queue<Node*> visited;
 			{
-				return;
-			}
-			Node* current = it.p_node;
-			Node** pos = nullptr;
-			Node* parent = nullptr;
-			if (current->parent)
-			{
-				parent = current->parent;
-				if (current->parent->left == current)
+				Node* current = it->parent;
+				while (current)
 				{
-					pos = &current->parent->left;
+					visited.push(current);
+					current = current->parent;
 				}
-				else if (current->parent->right == current)
-				{
-					pos = &current->parent->right;
-				}
-
-			}
-			else
-			{
-				pos = &pRoot;
 			}
 
-			if (it->left == nullptr && it->right == nullptr)
+			Node** pos = &pRoot;
+			if (Node* p = it->parent)
 			{
-				//leaf just remove it;
-				if (pos)
-				{
-					*pos = nullptr;
-
-				}
-				delete it.p_node;
-				size_--;
-				if (parent)
-				{
-					Recalc_Heights(parent);
-					Node::Recalc_Balance(parent);
-					Node::UpdateParents(parent);
-					pRoot = parent->GetRoot();
-				}
-
+				if (p->left == it.p_node) pos = &p->left;
+				else if (p->right == it.p_node) pos = &p->right;
 			}
-			else if (it->left == nullptr && it->right != nullptr)
-			{
-				if (pos)
-				{
-					*pos = current->right;
-					//(*pos)->height = current->height;
-					(*pos)->parent = parent;
-				}
-				delete it.p_node;
-				size_--;
-				if (parent)
-				{
-					Node::Recalc_Balance(parent);
-					Node::UpdateParents(parent);
-					pRoot = parent->GetRoot();
-				}
-			}
-			else if (it->left != nullptr && it->right == nullptr)
-			{
-				if (pos)
-				{
-					*pos = current->left;
-					//(*pos)->height = current->height;
-					(*pos)->parent = parent;
-				}
-				delete it.p_node;
-				size_--;
-				if (parent)
-				{
-					Node::Recalc_Balance(parent);
-					Node::UpdateParents(parent);
-					pRoot = parent->GetRoot();
-				}
-			}
-			else
-			{
-				Node* pred = current->decrement();
-				//current->left = pred->left;
-				current->value = pred->value;
-				current->key = pred->key;
-				erase(iterator(pred));
-				// swap "it" with the predecessor
-			}
-
+			RemoveNode(it.p_node, pos);
 			Recalc_Heights(pRoot);
 
-
+			while (!visited.empty())
+			{
+				Node* n = visited.front();
+				visited.pop();
+				Recalc_Heights(n);
+				Node::Recalc_Balance(n);
+			}
+			if(pRoot)
+				pRoot = pRoot->GetRoot();
 		}
 
 		//AVLmap methods dealing with const iterator 
@@ -675,6 +613,50 @@ namespace CS280 {
 		friend class AVLmap_iterator;
 		friend class AVLmap_iterator_const;
 	private:
+
+
+		void RemoveNode(Node* n, Node** pos)
+		{
+			//leaft
+			if (!n->left && !n->right)
+			{
+				size_--;
+				delete n;
+				if (pos)
+				{
+					*pos = nullptr;
+				}
+			}
+			else if (n->left && !n->right)
+			{
+				size_--;
+				if (pos)
+				{
+					*pos = n->left;
+				}
+				n->left->parent = n->parent;
+				delete n;
+			}
+			else if (!n->left && n->right)
+			{
+				size_--;
+				if (pos)
+				{
+					*pos = n->right;
+				}
+				n->right->parent = n->parent;
+				delete n;
+			}
+			else
+			{
+				Node* pred = n->decrement();
+				n->value = pred->value;
+				n->key = pred->key;
+				
+				erase(iterator(pred));
+
+			}
+		}
 
 		static int Recalc_Heights(Node* node)
 		{
